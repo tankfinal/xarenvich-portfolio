@@ -159,8 +159,9 @@ export default {
       ]
     },
     contact: {
-      email: "聯繫我",
-      phone: "+886-988-227-271",
+      title: "聯絡我",
+      email: "寄信給我",
+      phone: "打電話給我",
       location: "台灣"
     },
     theme: {

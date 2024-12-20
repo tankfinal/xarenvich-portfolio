@@ -141,8 +141,11 @@ export default {
       technologies: "Technologies"
     },
     contact: {
-      phone: "+886 988-227-271",
-      email: "aaa2003.loveyou@gmail.com",
+      title: "Contact Me",
+      email: "Email Me",
+      phone: "Call Me",
+      phone_number: "+886 988-227-271",
+      email_address: "aaa2003.loveyou@gmail.com",
       location: "Taiwan"
     },
     theme: {

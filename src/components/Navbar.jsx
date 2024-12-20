@@ -46,7 +46,7 @@ const Navbar = () => {
             {/* Theme toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="p-2 rounded-lg border border-gray-900 dark:border-white bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
             >
               {theme === 'dark' ? (
                 <SunIcon className="h-5 w-5" />
@@ -58,7 +58,7 @@ const Navbar = () => {
             {/* Language toggle */}
             <button
               onClick={toggleLanguage}
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="px-3 py-1 rounded-lg border border-gray-900 dark:border-white bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all font-medium"
             >
               {i18n.language === 'en' ? '中文' : 'EN'}
             </button>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="p-2 rounded-lg border border-gray-900 dark:border-white bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
             >
               {theme === 'dark' ? (
                 <SunIcon className="h-5 w-5" />
@@ -78,7 +78,7 @@ const Navbar = () => {
             </button>
             <button
               onClick={toggleLanguage}
-              className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="p-2 rounded-lg border border-gray-900 dark:border-white bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all font-medium"
             >
               {i18n.language === 'en' ? '中文' : 'EN'}
             </button>

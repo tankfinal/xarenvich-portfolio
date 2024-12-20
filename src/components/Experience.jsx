@@ -1,113 +1,106 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MapPinIcon } from '@heroicons/react/24/outline';
 
 const Experience = () => {
   const { t } = useTranslation();
 
   const experiences = [
     {
-      title: t('experience.positions.fullstack1.title'),
       company: t('experience.positions.fullstack1.company'),
-      location: t('experience.positions.fullstack1.location'),
+      title: t('experience.positions.fullstack1.title'),
       date: t('experience.positions.fullstack1.date'),
-      points: t('experience.positions.fullstack1.points', { returnObjects: true }),
+      description: t('experience.positions.fullstack1.points', { returnObjects: true }),
       tech: t('experience.positions.fullstack1.tech', { returnObjects: true }),
     },
     {
-      title: t('experience.positions.fullstack2.title'),
       company: t('experience.positions.fullstack2.company'),
-      location: t('experience.positions.fullstack2.location'),
+      title: t('experience.positions.fullstack2.title'),
       date: t('experience.positions.fullstack2.date'),
-      points: t('experience.positions.fullstack2.points', { returnObjects: true }),
+      description: t('experience.positions.fullstack2.points', { returnObjects: true }),
       tech: t('experience.positions.fullstack2.tech', { returnObjects: true }),
     },
     {
-      title: t('experience.positions.fullstack3.title'),
       company: t('experience.positions.fullstack3.company'),
-      location: t('experience.positions.fullstack3.location'),
+      title: t('experience.positions.fullstack3.title'),
       date: t('experience.positions.fullstack3.date'),
-      points: t('experience.positions.fullstack3.points', { returnObjects: true }),
+      description: t('experience.positions.fullstack3.points', { returnObjects: true }),
       tech: t('experience.positions.fullstack3.tech', { returnObjects: true }),
     },
     {
-      title: t('experience.positions.backend1.title'),
       company: t('experience.positions.backend1.company'),
-      location: t('experience.positions.backend1.location'),
+      title: t('experience.positions.backend1.title'),
       date: t('experience.positions.backend1.date'),
-      points: t('experience.positions.backend1.points', { returnObjects: true }),
+      description: t('experience.positions.backend1.points', { returnObjects: true }),
       tech: t('experience.positions.backend1.tech', { returnObjects: true }),
     },
     {
-      title: t('experience.positions.backend2.title'),
       company: t('experience.positions.backend2.company'),
-      location: t('experience.positions.backend2.location'),
+      title: t('experience.positions.backend2.title'),
       date: t('experience.positions.backend2.date'),
-      points: t('experience.positions.backend2.points', { returnObjects: true }),
+      description: t('experience.positions.backend2.points', { returnObjects: true }),
       tech: t('experience.positions.backend2.tech', { returnObjects: true }),
     }
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden" id="experience">
+    <section id="experience" className="relative py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-accent-light/70 dark:from-accent-dark dark:to-accent-dark/70">
             {t('experience.title')}
           </h2>
+          <div className="mt-2 h-1 w-20 bg-accent-light/30 dark:bg-accent-dark/30 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="mt-12 space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -10 : 10 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="glass-effect rounded-lg p-8">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div className="text-center md:text-left">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {exp.title}
-                    </h3>
-                    <p className="text-accent-light dark:text-accent-dark">
-                      {exp.company}
-                    </p>
-                    <div className="flex items-center justify-center md:justify-start mt-1 text-secondary-light dark:text-secondary-dark">
-                      <MapPinIcon className="w-4 h-4 mr-1" />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                  <p className="text-secondary-light dark:text-secondary-dark mt-2 md:mt-0 md:ml-4 whitespace-nowrap text-center md:text-left">
+              <div className="glass-effect rounded-lg p-6 border border-white/10 dark:border-black/10 shadow-lg backdrop-blur-sm bg-white/30 dark:bg-black/30">
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {exp.title}
+                  </h3>
+                  <p className="text-accent-light dark:text-accent-dark mt-1">
+                    {exp.company}
+                  </p>
+                  <p className="text-secondary-light dark:text-secondary-dark mt-1">
                     {exp.date}
                   </p>
                 </div>
 
-                <ul className="list-disc space-y-2 text-gray-700 dark:text-gray-300 ml-4">
-                  {exp.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="text-left">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-6">
+                  <ul className="space-y-3 text-left">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="text-gray-900 dark:text-white flex items-start">
+                        <span className="text-accent-light dark:text-accent-dark mr-3">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {exp.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 text-sm rounded-full bg-accent-light/10 dark:bg-accent-dark/10 text-accent-light dark:text-accent-dark"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2 mt-4 justify-start">
+                    {exp.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 text-sm rounded-md bg-accent-light/10 dark:bg-accent-dark/10 text-accent-light dark:text-accent-dark"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
