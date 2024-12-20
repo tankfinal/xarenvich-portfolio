@@ -21,8 +21,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-primary-light/80 dark:bg-primary-dark/80 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-primary-light/80 dark:bg-primary-dark/80 backdrop-blur shadow-lg">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="text-gray-900 dark:text-white font-bold text-xl">
@@ -99,8 +99,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary-light dark:bg-primary-dark">
+        <div className="md:hidden absolute w-full bg-primary-light dark:bg-primary-dark border-t border-gray-200 dark:border-gray-800">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}

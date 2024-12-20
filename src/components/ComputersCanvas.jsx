@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import * as THREE from 'three';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Computers = () => {
@@ -9,21 +10,14 @@ const Computers = () => {
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor={theme === 'dark' ? 'black' : 'white'} />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
       <pointLight intensity={1} />
-      <primitive
-        object={new THREE.IcosahedronGeometry(1, 1)}
-        scale={2}
-        position={[0, -1, 0]}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
+      <mesh>
+        <torusGeometry args={[2, 0.5, 16, 100]} />
+        <meshStandardMaterial
+          color={theme === 'dark' ? "#915eff" : "#2563eb"}
+          wireframe
+        />
+      </mesh>
     </mesh>
   );
 };
@@ -31,17 +25,16 @@ const Computers = () => {
 const ComputersCanvas = () => {
   return (
     <Canvas
-      frameloop='demand'
       shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [0, 0, 10], fov: 45 }}
       gl={{ preserveDrawingBuffer: true }}
+      style={{ height: '100%' }}
     >
       <Suspense fallback={null}>
         <OrbitControls
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          autoRotate
+          autoRotateSpeed={5}
         />
         <Computers />
       </Suspense>

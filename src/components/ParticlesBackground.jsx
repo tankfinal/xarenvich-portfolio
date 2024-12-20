@@ -21,7 +21,7 @@ const ParticlesBackground = () => {
         },
         background: {
           color: {
-            value: theme === 'dark' ? "#050816" : "#ffffff",
+            value: "transparent",
           },
         },
         fpsLimit: 120,
@@ -86,6 +86,14 @@ const ParticlesBackground = () => {
           },
         },
         detectRetina: true,
+      }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none"
       }}
     />
   );

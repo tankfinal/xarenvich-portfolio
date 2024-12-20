@@ -19,36 +19,51 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <div className="relative z-0 bg-primary-light dark:bg-primary-dark min-h-screen">
+        <div className="min-h-screen bg-primary-light dark:bg-primary-dark">
           <ParticlesBackground />
           <Navbar />
-          <div className="relative">
-            <section className="relative w-full h-screen mx-auto">
-              <div className="absolute inset-0">
+          
+          {/* Hero Section */}
+          <section className="relative w-full h-screen">
+            <div className="absolute inset-0 z-0">
+              <div className="h-full w-1/2 ml-auto">
                 <ComputersCanvas />
               </div>
-              <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-                <div className="relative z-10 bg-primary-light/70 dark:bg-primary-dark/70 backdrop-blur-sm rounded-lg p-8">
-                  <h1 className="text-gray-900 dark:text-white font-black text-7xl mb-4">
-                    {t('hero.greeting')} <span className="text-accent-light dark:text-accent-dark">{t('hero.name')}</span>
+            </div>
+            
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+              <div className="max-w-2xl glass-effect rounded-lg p-8">
+                <div className="space-y-3">
+                  <p className="text-accent-light dark:text-accent-dark text-xl">
+                    {t('hero.greeting')}
+                  </p>
+                  <h1 className="text-gray-900 dark:text-white font-black text-6xl md:text-7xl">
+                    {t('hero.name')}
                   </h1>
-                  <p className="text-secondary-light dark:text-secondary-dark text-xl mt-2 max-w-3xl">
+                  <p className="text-secondary-light dark:text-secondary-dark text-xl max-w-xl pt-4">
                     {t('hero.description')}
                   </p>
-                  <div className="mt-8 space-x-4">
-                    <a 
-                      href="mailto:aaa2003.loveyou@gmail.com" 
-                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent-light dark:bg-accent-dark hover:opacity-90 transition-opacity"
-                    >
-                      {t('contact.email')}
-                    </a>
-                    <span className="text-secondary-light dark:text-secondary-dark">|</span>
-                    <span className="text-secondary-light dark:text-secondary-dark">{t('contact.phone')}</span>
-                  </div>
+                </div>
+                
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a 
+                    href="mailto:aaa2003.loveyou@gmail.com" 
+                    className="inline-flex items-center px-6 py-3 rounded-md text-white bg-accent-light dark:bg-accent-dark hover:opacity-90 transition-opacity"
+                  >
+                    {t('contact.email')}
+                  </a>
+                  <a 
+                    href="tel:+886988227271"
+                    className="inline-flex items-center px-6 py-3 rounded-md border-2 border-accent-light dark:border-accent-dark text-accent-light dark:text-accent-dark hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 transition-colors"
+                  >
+                    {t('contact.phone')}
+                  </a>
                 </div>
               </div>
-            </section>
-          </div>
+            </div>
+          </section>
+
+          {/* Content Sections */}
           <div className="relative z-10">
             <Experience />
             <Skills />
