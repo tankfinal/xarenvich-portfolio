@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
 import Experience from './components/Experience'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
 import './i18n'
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
             </section>
           </div>
           <Experience />
+          <Skills />
+          <Projects />
         </div>
       </ThemeProvider>
     </BrowserRouter>
