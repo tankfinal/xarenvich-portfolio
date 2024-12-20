@@ -1,82 +1,89 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const skillCategories = [
   {
-    title: "Cloud",
+    id: 'cloud',
     skills: ["Eureka", "ALB", "Apollo", "Spring Gateway", "OpenFeign", "Alibaba Seata", "Nacos", "AWS"]
   },
   {
-    title: "ORM",
+    id: 'orm',
     skills: ["Mybatis Plus", "Hibernate", "JPA", "JDBC"]
   },
   {
-    title: "Front-End",
+    id: 'frontend',
     skills: ["JavaScript", "JQuery", "Bootstrap"]
   },
   {
-    title: "Version Control",
+    id: 'versionControl',
     skills: ["Git", "SVN", "Flyway", "Liquibase"]
   },
   {
-    title: "Deployment",
+    id: 'deployment',
     skills: ["Docker", "Gitlab", "Linux", "GitHub", "Kubernetes"]
   },
   {
-    title: "Back-End",
+    id: 'backend',
     skills: ["RabbitMQ", "Maven", "Gradle", "Swagger", "SFTP", "Crystal Report", "Web Socket", "Multi-Thread", "JWT", "Spring Security", "ElasticSearch", "XXL Job", "Sitemesh"]
   },
   {
-    title: "BigData Tools",
+    id: 'bigdata',
     skills: ["Airflow", "Flink", "Spark"]
   },
   {
-    title: "Framework",
+    id: 'framework',
     skills: ["Struts2", "Struts", "Spring Boot", "Spring MVC"]
   },
   {
-    title: "Database",
+    id: 'database',
     skills: ["MySQL", "MSSQL", "MariaDB", "Redis", "Starrocks", "HBase"]
   },
   {
-    title: "Others",
+    id: 'others',
     skills: ["Copilot", "CodeLlama", "Mantis", "Redmine", "TFS", "Grafana", "SBA", "Jaeger", "Kibana", "Jira", "Confluence"]
   }
 ];
 
-const SkillCategory = ({ category }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="p-6 bg-tertiary-light dark:bg-tertiary-dark rounded-lg shadow-lg"
-    >
-      <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{category.title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {category.skills.map((skill, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-accent-light/10 dark:bg-accent-dark/10 text-accent-light dark:text-accent-dark rounded-full text-sm"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
-
 const Skills = () => {
+  const { t } = useTranslation();
+  const [activeSkill, setActiveSkill] = useState(null);
+
   return (
     <section id="skills" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Professional Skills
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          {t('skills.title')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div className="hexagon-grid">
           {skillCategories.map((category, index) => (
-            <SkillCategory key={index} category={category} />
+            <div
+              key={index}
+              className="hexagon-wrapper"
+              onMouseEnter={() => setActiveSkill(category)}
+              onMouseLeave={() => setActiveSkill(null)}
+            >
+              <div className="hexagon">
+                <div className="hexagon-content">
+                  <span className="hexagon-title">{t(`skills.categories.${category.id}`)}</span>
+                </div>
+              </div>
+              
+              {activeSkill === category && (
+                <div className="skill-popup">
+                  <div className="skill-popup-header">
+                    <h3 className="text-xl font-bold">{t(`skills.categories.${category.id}`)}</h3>
+                  </div>
+                  <div className="skill-popup-content">
+                    {category.skills.map((skill, idx) => (
+                      <span key={idx} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

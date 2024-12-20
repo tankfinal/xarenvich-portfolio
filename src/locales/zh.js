@@ -114,48 +114,18 @@ export default {
       }
     },
     skills: {
-      title: "技能",
+      title: '專業技能',
       categories: {
-        cloud: {
-          title: "雲端技術",
-          items: ["AWS", "GCP", "Azure", "Docker", "Kubernetes"]
-        },
-        orm: {
-          title: "ORM 框架",
-          items: ["Hibernate", "Mybatis", "Sequelize", "Prisma"]
-        },
-        frontend: {
-          title: "前端技術",
-          items: ["React", "Vue", "Angular", "Next.js", "Tailwind CSS"]
-        },
-        backend: {
-          title: "後端技術",
-          items: ["Node.js", "Spring Boot", "Express", "Django"]
-        },
-        database: {
-          title: "資料庫",
-          items: ["MySQL", "PostgreSQL", "MongoDB", "Redis"]
-        },
-        deployment: {
-          title: "部署工具",
-          items: ["Jenkins", "GitLab CI", "GitHub Actions", "ArgoCD"]
-        },
-        bigdata: {
-          title: "大數據工具",
-          items: ["Hadoop", "Spark", "Flink", "Kafka"]
-        },
-        framework: {
-          title: "框架",
-          items: ["Spring Cloud", "NestJS", "FastAPI"]
-        },
-        versionControl: {
-          title: "版本控制",
-          items: ["Git", "SVN"]
-        },
-        other: {
-          title: "其他",
-          items: ["Linux", "Bash", "Python", "Java", "Scala"]
-        }
+        cloud: '雲服務',
+        orm: '資料映射',
+        frontend: '前端開發',
+        versionControl: '版本控制',
+        deployment: '部署工具',
+        backend: '後端開發',
+        bigdata: '大數據工具',
+        framework: '框架',
+        database: '資料庫',
+        others: '其他工具'
       }
     },
     portfolio: {
@@ -163,21 +133,75 @@ export default {
       view_project: "查看專案",
     },
     projects: {
-      title: "專案",
-      items: [
-        {
-          title: "電商平台",
-          description: "具有即時庫存管理功能的全棧電商平台",
-          tech: ["React", "Node.js", "MongoDB", "Redis", "Docker"],
-          link: "https://github.com/username/project"
+      title: '專案成就',
+      items: {
+        pmis: {
+          title: '採購管理資訊系統',
+          description: '新北市政府採購管理系統',
+          client: '新北市政府'
         },
-        {
-          title: "任務管理系統",
-          description: "具有基於角色的訪問控制的企業任務管理系統",
-          tech: ["Vue.js", "Spring Boot", "PostgreSQL", "Kubernetes"],
-          link: "https://github.com/username/project"
+        pmisEpa: {
+          title: '環保署採購管理系統',
+          description: '環保署採購管理資訊系統',
+          client: '行政院環境保護署'
+        },
+        motionSystem: {
+          title: '議案整合查詢系統',
+          description: 'misq.ly.gov.tw',
+          client: '立法院'
+        },
+        cpds: {
+          title: '財產申報與查核系統',
+          description: '財產申報與自動比對查核系統',
+          client: '監察院'
+        },
+        tis: {
+          title: '追蹤管理系統',
+          description: '案件追蹤管理系統',
+          client: '國家安全局'
+        },
+        kmsapp: {
+          title: 'USB裝置傳輸系統',
+          description: '軍方USB裝置傳輸管理系統',
+          client: '國家安全局'
+        },
+        badgeSystem: {
+          title: '徽章申請系統',
+          description: 'www.mittw.org.tw/Home',
+          client: '工業局'
+        },
+        eportfolio: {
+          title: '醫學教學資源系統',
+          description: '醫學教學資源電子化系統',
+          client: '台大醫院'
+        },
+        fwmw: {
+          title: '防火牆中介系統',
+          description: '防火牆管理中介系統',
+          client: '合勤科技'
         }
-      ]
+      }
+    },
+    achievements: {
+      title: '專案成就',
+      items: {
+        projectCount: {
+          number: '50+',
+          label: '完成專案'
+        },
+        experience: {
+          number: '8+',
+          label: '年資歷'
+        },
+        clients: {
+          number: '30+',
+          label: '合作客戶'
+        },
+        awards: {
+          number: '15+',
+          label: '獲獎認可'
+        }
+      }
     },
     contact: {
       title: "聯絡方式",

@@ -139,25 +139,91 @@ export default {
       title: "Portfolio",
       view_project: "View Project",
     },
+    projects: {
+      title: 'Project Achievements',
+      items: {
+        pmis: {
+          title: 'Purchase Manager Information System',
+          description: 'Purchase Management System for New Taipei City Government',
+          client: 'New Taipei City Government'
+        },
+        pmisEpa: {
+          title: 'EPA Purchase Management System',
+          description: 'Purchase Manager Information System in EPA',
+          client: 'Environment Protection Administration'
+        },
+        motionSystem: {
+          title: 'Motion Integration and Query System',
+          description: 'misq.ly.gov.tw',
+          client: 'The Legislative Yuan'
+        },
+        cpds: {
+          title: 'Property Declaration System',
+          description: 'Property Declaration and Checking System',
+          client: 'The Control Yuan'
+        },
+        tis: {
+          title: 'Trace Issue System',
+          description: 'Case Tracking Management System',
+          client: 'National Security Bureau'
+        },
+        kmsapp: {
+          title: 'USB Device Transmission System',
+          description: 'USB Device Transmission System for Army',
+          client: 'National Security Bureau'
+        },
+        badgeSystem: {
+          title: 'Badge Application System',
+          description: 'www.mittw.org.tw/Home',
+          client: 'Industrial Development Bureau'
+        },
+        eportfolio: {
+          title: 'Medical Teaching Resources',
+          description: 'E-portfolio System for Medical Teaching',
+          client: 'National Taiwan University Hospital'
+        },
+        fwmw: {
+          title: 'Firewall Middleware System',
+          description: 'Firewall Management Middleware System',
+          client: 'Zyxel Communications Corp.'
+        }
+      }
+    },
     skills: {
-      title: "Skills",
+      title: "Professional Skills",
       categories: {
-        cloud: "Cloud",
+        cloud: "Cloud Services",
         orm: "ORM",
         frontend: "Front-End",
-        backend: "Back-End",
-        database: "Database",
+        versionControl: "Version Control",
         deployment: "Deployment",
+        backend: "Back-End",
         bigdata: "Big Data Tools",
         framework: "Framework",
-        versionControl: "Version Control",
+        database: "Database",
         others: "Others"
       }
     },
-    projects: {
-      title: "Project Achievements",
-      client: "Client",
-      technologies: "Technologies"
+    achievements: {
+      title: 'Project Achievements',
+      items: {
+        projectCount: {
+          number: '50+',
+          label: 'Projects Completed'
+        },
+        experience: {
+          number: '8+',
+          label: 'Years Experience'
+        },
+        clients: {
+          number: '30+',
+          label: 'Happy Clients'
+        },
+        awards: {
+          number: '15+',
+          label: 'Awards Received'
+        }
+      }
     },
     contact: {
       title: "Contact",
