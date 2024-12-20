@@ -1,0 +1,131 @@
+// Artistic theme variables
+$primary-color: theme('colors.primary.500');
+$secondary-color: theme('colors.secondary.500');
+$accent-color: theme('colors.accent.500');
+
+// Artistic mixins
+@mixin artistic-text {
+  @apply font-serif tracking-wide leading-relaxed;
+}
+
+@mixin artistic-heading {
+  @apply font-sans font-bold tracking-wider;
+}
+
+@mixin artistic-card {
+  @apply relative bg-white/80 dark:bg-black/80 backdrop-blur-md border border-white/20 dark:border-black/20 rounded-2xl overflow-hidden shadow-xl;
+  
+  &::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary-500/10 via-secondary-500/10 to-accent-500/10 -z-10;
+  }
+}
+
+@mixin artistic-button {
+  @apply relative px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-sans font-semibold tracking-wider rounded-full cursor-pointer transition-all duration-300;
+  
+  &:hover {
+    @apply transform -translate-y-0.5 shadow-lg;
+  }
+}
+
+// Artistic animations
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-primary-500 to-secondary-500 rounded;
+}
+
+// Global styles
+body {
+  background: theme('colors.gray.100');
+  color: theme('colors.gray.900');
+  @include artistic-text;
+}
+
+// Utility classes
+.artistic-gradient-text {
+  background: linear-gradient(45deg, $primary-color, $secondary-color, $accent-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradient 3s ease infinite;
+}
+
+.artistic-card {
+  @include artistic-card;
+}
+
+.artistic-button {
+  @include artistic-button;
+}
+
+.artistic-heading {
+  @include artistic-heading;
+}
+
+// Animation classes
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.artistic-link {
+  @apply relative inline-block text-primary-500 hover:text-primary-600 transition-colors duration-300;
+  
+  &::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300;
+  }
+  
+  &:hover::after {
+    @apply w-full;
+  }
+}
+
+.artistic-shadow {
+  box-shadow: 0 0 30px rgba(theme('colors.primary.500'), 0.1);
+}
+
+.artistic-gradient-bg {
+  @apply bg-gradient-to-br from-primary-500/5 via-secondary-500/5 to-accent-500/5;
+}
