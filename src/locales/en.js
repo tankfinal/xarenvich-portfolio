@@ -83,16 +83,15 @@ export default {
           tech: ["Java", "Spring MVC", "Mybatis", "System Analysis", "System Design"]
         },
         backend2: {
-          title: "Senior Software Engineer",
-          company: "Ares International Corp.",
-          location: "Taipei, Taiwan",
-          date: "Mar 2014 - Jul 2017",
+          title: 'Senior Software Engineer',
+          company: 'Ares International Corp.',
+          date: 'Mar. 2014 - Jul. 2017',
           points: [
-            "Diligently maintained a range of systems, which encompassed coding, debugging, and conducting thorough vulnerability assessments",
-            "Managed government projects, with notable achievements including the creation of one system and the continued maintenance of three systems",
-            "Spearheaded the development of a robust Back-end System utilizing Struts2 and JDBC, complemented by a meticulously crafted Front-end with jQuery"
+            'Diligently maintained a range of systems, which encompassed coding, debugging, and conducting thorough vulnerability assessments.',
+            'Managed government projects, with notable achievements including the creation of one system and the continued maintenance of three systems.',
+            'Spearheaded the development of a robust Back-end System utilizing Struts2 and JDBC, complemented by a meticulously crafted Front-end with jQuery.'
           ],
-          tech: ["Java", "Struts2", "JDBC", "jQuery", "System Maintenance", "Vulnerability Assessment"]
+          tech: ['Struts2', 'JDBC', 'jQuery']
         },
         frontend1: {
           title: "Frontend Developer",

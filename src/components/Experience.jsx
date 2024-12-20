@@ -1,114 +1,191 @@
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 
 const Experience = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+  const [activeExperience, setActiveExperience] = useState(null)
 
   const experiences = [
     {
-      company: t('experience.positions.fullstack1.company'),
+      id: 'fullstack1',
       title: t('experience.positions.fullstack1.title'),
+      company: t('experience.positions.fullstack1.company'),
       date: t('experience.positions.fullstack1.date'),
-      description: t('experience.positions.fullstack1.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack1.tech', { returnObjects: true }),
+      year: '2023',
+      points: t('experience.positions.fullstack1.points', { returnObjects: true }),
+      tech: t('experience.positions.fullstack1.tech', { returnObjects: true })
     },
     {
-      company: t('experience.positions.fullstack2.company'),
+      id: 'fullstack2',
       title: t('experience.positions.fullstack2.title'),
+      company: t('experience.positions.fullstack2.company'),
       date: t('experience.positions.fullstack2.date'),
-      description: t('experience.positions.fullstack2.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack2.tech', { returnObjects: true }),
+      year: '2022',
+      points: t('experience.positions.fullstack2.points', { returnObjects: true }),
+      tech: t('experience.positions.fullstack2.tech', { returnObjects: true })
     },
     {
-      company: t('experience.positions.fullstack3.company'),
+      id: 'fullstack3',
       title: t('experience.positions.fullstack3.title'),
+      company: t('experience.positions.fullstack3.company'),
       date: t('experience.positions.fullstack3.date'),
-      description: t('experience.positions.fullstack3.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack3.tech', { returnObjects: true }),
+      year: '2021',
+      points: t('experience.positions.fullstack3.points', { returnObjects: true }),
+      tech: t('experience.positions.fullstack3.tech', { returnObjects: true })
     },
     {
-      company: t('experience.positions.backend1.company'),
+      id: 'backend1',
       title: t('experience.positions.backend1.title'),
+      company: t('experience.positions.backend1.company'),
       date: t('experience.positions.backend1.date'),
-      description: t('experience.positions.backend1.points', { returnObjects: true }),
-      tech: t('experience.positions.backend1.tech', { returnObjects: true }),
+      year: '2020',
+      points: t('experience.positions.backend1.points', { returnObjects: true }),
+      tech: t('experience.positions.backend1.tech', { returnObjects: true })
     },
     {
-      company: t('experience.positions.backend2.company'),
+      id: 'backend2',
       title: t('experience.positions.backend2.title'),
+      company: t('experience.positions.backend2.company'),
       date: t('experience.positions.backend2.date'),
-      description: t('experience.positions.backend2.points', { returnObjects: true }),
-      tech: t('experience.positions.backend2.tech', { returnObjects: true }),
+      year: '2017',
+      points: t('experience.positions.backend2.points', { returnObjects: true }),
+      tech: t('experience.positions.backend2.tech', { returnObjects: true })
     }
-  ];
+  ]
+
+  const timelineVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  }
+
+  const dotVariants = {
+    initial: { scale: 1 },
+    hover: { scale: 1.2 }
+  }
+
+  const contentVariants = {
+    initial: { opacity: 0.8 },
+    hover: { 
+      opacity: 1,
+      scale: 1.02,
+      transition: { duration: 0.2 }
+    }
+  }
 
   return (
-    <section id="experience" className="relative py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-accent-light/70 dark:from-accent-dark dark:to-accent-dark/70">
-            {t('experience.title')}
-          </h2>
-          <div className="mt-2 h-1 w-20 bg-accent-light/30 dark:bg-accent-dark/30 mx-auto rounded-full" />
-        </motion.div>
+    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          {t('experience.title')}
+        </h2>
 
-        <div className="mt-12 space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              <div className="glass-effect rounded-lg p-6 border border-white/10 dark:border-black/10 shadow-lg backdrop-blur-sm bg-white/30 dark:bg-black/30">
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {exp.title}
-                  </h3>
-                  <p className="text-accent-light dark:text-accent-dark mt-1">
-                    {exp.company}
-                  </p>
-                  <p className="text-secondary-light dark:text-secondary-dark mt-1">
-                    {exp.date}
-                  </p>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Timeline line */}
+          <div className="absolute h-full" style={{ left: '50%', width: '2px', transform: 'translateX(-50%)', backgroundColor: 'rgb(229, 231, 235)' }}>
+          </div>
+
+          {/* Timeline dots and content */}
+          <div className="relative">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={exp.id}
+                className="mb-16 relative"
+                variants={timelineVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                onHoverStart={() => setActiveExperience(exp.id)}
+                onHoverEnd={() => setActiveExperience(null)}
+              >
+                {/* Year label */}
+                <div 
+                  className={`absolute left-1/2 -translate-x-1/2 ${
+                    index % 2 === 0 ? '-translate-y-8' : 'translate-y-8'
+                  } text-sm font-medium text-gray-500 dark:text-gray-400`}
+                >
+                  {exp.year}
                 </div>
 
-                <div className="mt-6">
-                  <ul className="space-y-3 text-left">
-                    {exp.description.map((item, i) => (
-                      <li key={i} className="text-gray-900 dark:text-white flex items-start">
-                        <span className="text-accent-light dark:text-accent-dark mr-3">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Timeline dot */}
+                <div className="absolute left-1/2 -translate-x-1/2">
+                  <motion.div
+                    className={`w-4 h-4 rounded-full cursor-pointer z-10 ${
+                      activeExperience === exp.id
+                        ? 'bg-primary-500 ring-4 ring-primary-200 dark:ring-primary-800'
+                        : 'bg-gray-400 dark:bg-gray-600'
+                    }`}
+                    variants={dotVariants}
+                    initial="initial"
+                    whileHover="hover"
+                  />
+                </div>
 
-                  <div className="flex flex-wrap gap-2 mt-4 justify-start">
-                    {exp.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 text-sm rounded-md bg-accent-light/10 dark:bg-accent-dark/10 text-accent-light dark:text-accent-dark"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {/* Content */}
+                <motion.div
+                  className={`relative ${
+                    index % 2 === 0 ? 'ml-[55%]' : 'mr-[55%]'
+                  } bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-200 ${
+                    activeExperience === exp.id ? 'ring-2 ring-primary-500/50' : ''
+                  }`}
+                  variants={contentVariants}
+                  initial="initial"
+                  animate={activeExperience === exp.id ? "hover" : "initial"}
+                >
+                  <div className="absolute top-1/2 transform -translate-y-1/2 w-4 h-4">
+                    <div className={`w-0 h-0 border-solid ${
+                      index % 2 === 0
+                        ? 'border-r-[12px] border-r-white dark:border-r-gray-800 -left-4'
+                        : 'border-l-[12px] border-l-white dark:border-l-gray-800 -right-4'
+                    } border-y-[6px] border-y-transparent absolute`} />
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                  <div className={`${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                    <h3 className="text-xl font-bold mb-2 dark:text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-2">
+                      {exp.company}
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                      {exp.date}
+                    </p>
+                  </div>
+                  <div className="text-left">
+                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
+                      {exp.points.map((point, i) => (
+                        <li key={i} className="mb-2">{point}</li>
+                      ))}
+                    </ul>
+                    {exp.tech && (
+                      <div className="mt-4">
+                        <p className="text-sm font-semibold mb-2 dark:text-gray-300">
+                          {t('experience.technologies')}:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.tech.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

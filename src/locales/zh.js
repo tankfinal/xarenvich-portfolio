@@ -28,6 +28,7 @@ export default {
       title: "工作經驗",
       current: "至今",
       years: "年",
+      technologies: '使用技術',
       positions: {
         fullstack1: {
           title: "資深軟體工程師",
@@ -84,11 +85,11 @@ export default {
         },
         backend2: {
           title: "資深軟體工程師",
-          company: "華義國際 Ares",
+          company: "資通電腦 Ares International Corp.",
           location: "台北, 台灣",
           date: "2014年3月 - 2017年7月",
           points: [
-            "負責多個系統的維護，包括編碼、除錯和進行全面的漏洞評估",
+            "負責多個系統的維護，包括程式碼撰寫、除錯和進行全面的漏洞評估",
             "管理政府專案，成功建立一個新系統並維護三個現有系統",
             "使用 Struts2 和 JDBC 主導開發後端系統，並使用 jQuery 精心打造前端介面"
           ],
