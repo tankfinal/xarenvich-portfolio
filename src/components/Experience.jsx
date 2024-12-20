@@ -73,20 +73,20 @@ const Experience = () => {
               className="relative"
             >
               <div className="glass-effect rounded-lg p-8">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div className="text-center md:text-left">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {exp.title}
                     </h3>
                     <p className="text-accent-light dark:text-accent-dark">
                       {exp.company}
                     </p>
-                    <div className="flex items-center mt-1 text-secondary-light dark:text-secondary-dark">
+                    <div className="flex items-center justify-center md:justify-start mt-1 text-secondary-light dark:text-secondary-dark">
                       <MapPinIcon className="w-4 h-4 mr-1" />
                       <span>{exp.location}</span>
                     </div>
                   </div>
-                  <p className="text-secondary-light dark:text-secondary-dark mt-2 md:mt-0 md:ml-4 whitespace-nowrap">
+                  <p className="text-secondary-light dark:text-secondary-dark mt-2 md:mt-0 md:ml-4 whitespace-nowrap text-center md:text-left">
                     {exp.date}
                   </p>
                 </div>
