@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
@@ -25,9 +24,9 @@ const Navbar = () => {
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-gray-900 dark:text-white font-bold text-xl">
+            <a href="#" className="text-gray-900 dark:text-white font-bold text-xl">
               Tank Yang
-            </Link>
+            </a>
           </div>
           
           {/* Desktop menu */}

@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
+import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
@@ -54,7 +55,7 @@ function App() {
                   </a>
                   <a 
                     href="tel:+886988227271"
-                    className="inline-flex items-center px-6 py-3 rounded-md border-2 border-accent-light dark:border-accent-dark text-accent-light dark:text-accent-dark hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 transition-colors"
+                    className="inline-flex items-center px-6 py-3 rounded-md border-2 border-accent-light dark:border-accent-dark text-accent-light dark:text-accent-dark hover:bg-accent-light hover:text-white dark:hover:bg-accent-dark dark:hover:text-white transition-colors"
                   >
                     {t('contact.phone')}
                   </a>
@@ -62,6 +63,9 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* About Section */}
+          <About />
 
           {/* Content Sections */}
           <div className="relative z-10">
