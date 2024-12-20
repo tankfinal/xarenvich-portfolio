@@ -20,7 +20,7 @@ export default {
         "在超過10年的豐富工作經驗中，我持續運用履歷中詳述的各項技能。通過處理眾多挑戰和問題，我磨練出了**解決問題的能力**，能夠準確地解決各種問題。此外，我培養了研究和採用新技能的熱情，以優化系統性能並減輕系統負載，這種追求不斷激發我對先進技術的好奇心。",
         "作為一個重視人際關係的個體，我在與不同團隊合作時表現出色。我理解每個團隊成員在實現成功中的重要角色，並主動與同事**分享**知識，為我們的共同成長做出貢獻。",
         "在閒暇時間，我**致力於**進一步提升編碼技能。我追求額外的教育，並在 **GitLab** 等平台上將新學到的知識應用到測試項目中。此外，我熱愛旅行、唱歌，最重要的是，享受生活的樂趣。",
-        "擁有9年的工程經驗，我對**整個軟體開發專案生命週期**有全面的理解。我能夠根據需求快速適應並精通**新技術**的能力，使我成為任何職位的有力人選。",
+        "擁有十年以上的工程經驗，我對**整個軟體開發專案生命週期**有全面的理解。我能夠根據需求快速適應並精通**新技術**的能力，使我成為任何職位的有力人選。",
         "如果我符合您尋找的人才條件，請與我聯繫。我期待有機會與您交流。"
       ]
     },
@@ -31,6 +31,17 @@ export default {
       technologies: '使用技術',
       positions: {
         fullstack1: {
+          title: "資深後端工程師",
+          company: "XREX 鏈科股份有限公司",
+          location: "台北, 台灣",
+          date: "2023年9月 - 至今",
+          points: [
+            "開發和維護公司網站",
+            "參與後端系統的開發與優化"
+          ],
+          tech: ["Java", "SpringBoot", "Data Science"]
+        },
+        fullstack2: {
           title: "資深軟體工程師",
           company: "幣安 Binance",
           location: "台北, 台灣",
@@ -44,7 +55,7 @@ export default {
           ],
           tech: ["Java", "Python", "Scala", "SpringBoot", "Kafka", "Redis", "HBase", "ElasticSearch", "Spark", "Flink", "XXL Job", "Starrocks", "Mybatis", "Hive", "Airflow", "Langchain", "Langflow"]
         },
-        fullstack2: {
+        fullstack3: {
           title: "軟體副理",
           company: "上博科技 Cimforce",
           location: "台北, 台灣",
@@ -58,7 +69,7 @@ export default {
           ],
           tech: ["Java", "SpringBoot", "Redis", "RabbitMQ", "Mybatis", "Spring Cloud", "Git"]
         },
-        fullstack3: {
+        fullstack4: {
           title: "資深 Java 工程師",
           company: "持盈資訊",
           location: "台北, 台灣",
@@ -160,10 +171,14 @@ export default {
       ]
     },
     contact: {
-      title: "聯絡我",
-      email: "寄信給我",
-      phone: "打電話給我",
-      location: "台灣"
+      title: "聯絡方式",
+      email: "tankfinal@gmail.com",
+      github: "https://github.com/tankfinal",
+      linkedin: "https://www.linkedin.com/in/zheng-yu-yang-807a5281/",
+      social: {
+        github: "GitHub",
+        linkedin: "LinkedIn"
+      }
     },
     theme: {
       light: '淺色',

@@ -20,7 +20,7 @@ export default {
         "I have accrued more than 10 years of extensive work experience during which I consistently applied a range of skills as detailed in my resume. Dealing with numerous challenges and bugs has honed my **problem-solving abilities**, enabling me to address issues accurately. Additionally, I've cultivated a passion for researching and adopting new skills to optimize system performance and alleviate system load, an endeavor that continually fuels my curiosity about advanced technologies.",
         "Being a people-oriented individual, I thrive when collaborating with diverse teams. I understand the vital role each team member plays in achieving success, and I proactively **share** my knowledge with my colleagues to contribute to our collective growth.",
         "During my leisure time, I am **devoted** to further enhancing my coding skills. I pursue additional education, applying my newfound knowledge to test projects on platforms like **GitLab**. Furthermore, I'm an enthusiast of travel, singing, and, above all, embracing the joys of life.",
-        "With 9 years of engineering experience, I possess a comprehensive understanding of the **entire software development project lifecycle**. My aptitude for quickly adapting to and excelling in **new technologies** as required makes me a compelling candidate for any position.",
+        "With over than 10 years of engineering experience, I possess a comprehensive understanding of the **entire software development project lifecycle**. My aptitude for quickly adapting to and excelling in **new technologies** as required makes me a compelling candidate for any position.",
         "If I align with the profile you are seeking, kindly reach out to me. I eagerly anticipate the opportunity to connect with you."
       ]
     },
@@ -28,8 +28,19 @@ export default {
       title: "Professional Experience",
       current: "Current",
       years: "years",
+      technologies: 'Technologies',
       positions: {
         fullstack1: {
+          title: "Principal Backend Engineer",
+          company: "XREX",
+          date: "Sep. 2023 - Present",
+          points: [
+            "Develop and maintain company website",
+            "Participate in backend system development and optimization"
+          ],
+          tech: ["Java", "SpringBoot", "Data Science"]
+        },
+        fullstack2: {
           title: "Senior Software Engineer",
           company: "Binance",
           location: "Taipei, Taiwan",
@@ -43,7 +54,7 @@ export default {
           ],
           tech: ["Java", "Python", "Scala", "SpringBoot", "Kafka", "Redis", "HBase", "ElasticSearch", "Spark", "Flink", "XXL Job", "Starrocks", "Mybatis", "Hive", "Airflow", "Langchain", "Langflow"]
         },
-        fullstack2: {
+        fullstack3: {
           title: "Software Deputy Manager",
           company: "Cimforce International Limited",
           location: "Taipei, Taiwan",
@@ -57,7 +68,7 @@ export default {
           ],
           tech: ["Java", "SpringBoot", "Redis", "RabbitMQ", "Mybatis", "Spring Cloud", "Git"]
         },
-        fullstack3: {
+        fullstack4: {
           title: "Senior Java Software Engineer",
           company: "Chiying Information Corp.",
           location: "Taipei, Taiwan",
@@ -140,12 +151,14 @@ export default {
       technologies: "Technologies"
     },
     contact: {
-      title: "Contact Me",
-      email: "Email Me",
-      phone: "Call Me",
-      phone_number: "+886 988-227-271",
-      email_address: "aaa2003.loveyou@gmail.com",
-      location: "Taiwan"
+      title: "Contact",
+      email: "tankfinal@gmail.com",
+      github: "https://github.com/tankfinal",
+      linkedin: "https://www.linkedin.com/in/zheng-yu-yang-807a5281/",
+      social: {
+        github: "GitHub",
+        linkedin: "LinkedIn"
+      }
     },
     theme: {
       light: 'Light',

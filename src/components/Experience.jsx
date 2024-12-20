@@ -1,6 +1,17 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
+import xrexLogo from '../assets/company-logos/xrex.png'
+import binanceLogo from '../assets/company-logos/binance.png'
+import cimforceLogo from '../assets/company-logos/cimforce.png'
+import aresLogo from '../assets/company-logos/ares.png'
+
+const companyLogos = {
+  XREX: xrexLogo,
+  Binance: binanceLogo,
+  Cimforce: cimforceLogo,
+  Ares: aresLogo,
+}
 
 const Experience = () => {
   const { t } = useTranslation()
@@ -12,45 +23,50 @@ const Experience = () => {
       title: t('experience.positions.fullstack1.title'),
       company: t('experience.positions.fullstack1.company'),
       date: t('experience.positions.fullstack1.date'),
-      year: '2023',
+      year: '2023 - Present',
       points: t('experience.positions.fullstack1.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack1.tech', { returnObjects: true })
+      tech: t('experience.positions.fullstack1.tech', { returnObjects: true }),
+      logo: 'XREX'
     },
     {
       id: 'fullstack2',
       title: t('experience.positions.fullstack2.title'),
       company: t('experience.positions.fullstack2.company'),
       date: t('experience.positions.fullstack2.date'),
-      year: '2022',
+      year: '2022 - 2023',
       points: t('experience.positions.fullstack2.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack2.tech', { returnObjects: true })
+      tech: t('experience.positions.fullstack2.tech', { returnObjects: true }),
+      logo: 'Binance'
     },
     {
       id: 'fullstack3',
       title: t('experience.positions.fullstack3.title'),
       company: t('experience.positions.fullstack3.company'),
       date: t('experience.positions.fullstack3.date'),
-      year: '2021',
+      year: '2021 - 2022',
       points: t('experience.positions.fullstack3.points', { returnObjects: true }),
-      tech: t('experience.positions.fullstack3.tech', { returnObjects: true })
+      tech: t('experience.positions.fullstack3.tech', { returnObjects: true }),
+      logo: 'Cimforce'
     },
     {
-      id: 'backend1',
-      title: t('experience.positions.backend1.title'),
-      company: t('experience.positions.backend1.company'),
-      date: t('experience.positions.backend1.date'),
-      year: '2020',
-      points: t('experience.positions.backend1.points', { returnObjects: true }),
-      tech: t('experience.positions.backend1.tech', { returnObjects: true })
+      id: 'fullstack4',
+      title: t('experience.positions.fullstack4.title'),
+      company: t('experience.positions.fullstack4.company'),
+      date: t('experience.positions.fullstack4.date'),
+      year: '2020 - 2021',
+      points: t('experience.positions.fullstack4.points', { returnObjects: true }),
+      tech: t('experience.positions.fullstack4.tech', { returnObjects: true }),
+      logo: 'Chiying'
     },
     {
       id: 'backend2',
       title: t('experience.positions.backend2.title'),
       company: t('experience.positions.backend2.company'),
       date: t('experience.positions.backend2.date'),
-      year: '2017',
+      year: '2014 - 2017',
       points: t('experience.positions.backend2.points', { returnObjects: true }),
-      tech: t('experience.positions.backend2.tech', { returnObjects: true })
+      tech: t('experience.positions.backend2.tech', { returnObjects: true }),
+      logo: 'Ares'
     }
   ]
 
@@ -147,9 +163,18 @@ const Experience = () => {
                     <h3 className="text-xl font-bold mb-2 dark:text-white">
                       {exp.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-2">
-                      {exp.company}
-                    </p>
+                    <div className="flex items-center gap-3 mb-3">
+                      {exp.logo && companyLogos[exp.logo] && (
+                        <img 
+                          src={companyLogos[exp.logo]} 
+                          alt={exp.company} 
+                          className="w-12 h-12 object-contain rounded-sm dark:bg-white dark:p-1"
+                        />
+                      )}
+                      <p className="text-gray-600 dark:text-gray-300 text-lg">
+                        {exp.company}
+                      </p>
+                    </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                       {exp.date}
                     </p>
