@@ -6,12 +6,17 @@ export default {
       projects: 'Projects',
       contact: 'Contact',
       skills: 'Skills',
-      education: 'Education'
+      education: 'Education',
+      portfolio: "Portfolio"
     },
     hero: {
+      title: "",
+      subtitle: "A passionate full-stack engineer focused on creating elegant user experiences",
+      cta_primary: "Contact Me",
+      cta_secondary: "View Portfolio",
       greeting: "",
       name: "Tank Yang",
-      role: "Senior Software Engineer",
+      role: "Principal Backend Engineer",
       description: "A passionate software developer with over 10 years of experience in building digital solutions. Specializing in Java, Spring Boot, and microservices architecture."
     },
     about: {
@@ -130,8 +135,12 @@ export default {
         }
       }
     },
+    portfolio: {
+      title: "Portfolio",
+      view_project: "View Project",
+    },
     skills: {
-      title: "Professional Skills",
+      title: "Skills",
       categories: {
         cloud: "Cloud",
         orm: "ORM",

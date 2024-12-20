@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-light': '#ffffff',
-        'primary-dark': '#0a0a0a',
-        'secondary-light': '#4a5568',
-        'secondary-dark': '#a0aec0',
-        'accent-light': '#6366f1',
-        'accent-dark': '#818cf8',
+        'accent-light': '#3B82F6', // Blue-500
+        'accent-dark': '#60A5FA',  // Blue-400
+        'primary-light': '#FFFFFF',
+        'primary-dark': '#111827', // Gray-900
+        'secondary-light': '#4B5563', // Gray-600
+        'secondary-dark': '#9CA3AF',  // Gray-400
       },
       screens: {
         xs: "450px",

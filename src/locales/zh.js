@@ -6,13 +6,18 @@ export default {
       projects: "專案",
       contact: "聯繫",
       skills: "技能",
-      education: "學歷"
+      education: "學歷",
+      portfolio: "作品集"
     },
     hero: {
       greeting: "",
-      name: "楊幀羽",
-      role: "全棧開發工程師",
-      description: "一位專注於雲計算、微服務和現代網絡技術的全棧開發工程師。"
+      name: "Tank Yang",
+      role: "資深後端工程師",
+      description: "一位專注於微服務架構、大數據分析及AI技術的後端工程師。",
+      title: "",
+      subtitle: "一位充滿熱情的全端工程師，專注於創造優雅的使用者體驗",
+      cta_primary: "聯絡我",
+      cta_secondary: "查看作品"
     },
     about: {
       title: "關於我",
@@ -152,6 +157,10 @@ export default {
           items: ["Linux", "Bash", "Python", "Java", "Scala"]
         }
       }
+    },
+    portfolio: {
+      title: "作品集",
+      view_project: "查看專案",
     },
     projects: {
       title: "專案",
