@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const skillCategories = [
   {
     id: 'cloud',
-    skills: ["Eureka", "ALB", "Apollo", "Spring Gateway", "OpenFeign", "Alibaba Seata", "Nacos", "AWS"]
+    skills: ["Eureka", "Apollo", "Spring Gateway", "OpenFeign", "Alibaba Seata", "Nacos", "AWS"]
   },
   {
     id: 'orm',
